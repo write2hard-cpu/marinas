@@ -1,0 +1,136 @@
+:root {
+  /* базовые цвета в тёплой оранжевой палитре (чуть ярче) */
+  --bg-main: #0b0501;
+  --text-main: #fff8ef;
+  --text-muted: #f0c19a;
+  --accent: #ffb357;
+
+  /* координаты подсветки курсора */
+  --cursor-x: 50%;
+  --cursor-y: 30%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, #3a1a07 0, transparent 55%),
+    linear-gradient(135deg, #050100, #1b0b03 45%, #2a1506);
+  color: var(--text-main);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(
+      circle at var(--cursor-x) var(--cursor-y),
+      rgba(255, 179, 87, 0.5),
+      transparent 55%
+    );
+  opacity: 0.85;
+  transition: background 0.2s ease-out;
+}
+
+.hero__content {
+  max-width: 640px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.hero--visible .hero__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero__bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero__cta {
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 179, 87, 0.6);
+  background:
+    linear-gradient(135deg, #ffb357, #ff8a3d);
+  color: #1b0802;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition:
+    background 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hero__cta:hover {
+  background:
+    linear-gradient(135deg, #ffc46e, #ff9448);
+  border-color: rgba(255, 196, 110, 0.9);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85);
+  transform: translateY(-1px) scale(1.01);
+}
+
+.hero__cta:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .hero__bio {
+    font-size: 0.95rem;
+  }
+
+  .hero__cta {
+    width: 100%;
+  }
+}

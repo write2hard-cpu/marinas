@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Личный сайт начинающего разработчика</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="hero">
+    <div class="hero__bg"></div>
+
+    <div class="hero__content">
+      <p class="hero__subtitle">Вреднючая секси жопа</p>
+
+      <h1 class="hero__title">Марина Сенькина</h1>
+
+      <p class="hero__bio">
+       Родовая мокшанка, которая любит зефиркии шоколадки.
+        Танцую и снимаюсь в крутых фотосессиях.
+      </p>
+
+      <button class="hero__cta" type="button">
+        мои навыки
+      </button>
+    </div>
+  </header>
+
+  <section class="skills-section" id="skills">
+    <div class="skills-section__inner">
+      <h2>Мои навыки</h2>
+
+      <div class="skills-controls">
+        <button id="add-skill-btn" type="button">Добавить навык</button>
+      </div>
+
+      <div id="skills-grid" class="skills-grid">
+        <!-- Карточки будут подставляться из JS -->
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-index" id="skills-index">
+    <div class="skills-index__inner">
+      <h2>Мой индекс навыков</h2>
+
+      <div class="skills-index__sliders">
+        <div class="skills-index__row">
+          <label class="skills-index__label" for="skill-html">Сосание</label>
+          <div class="skills-index__control">
+            <input
+              type="range"
+              id="skill-html"
+              class="skills-index__slider"
+              min="0"
+              max="100"
+              step="1"
+              value="40"
+              data-skill="html"
+              data-output-id="skill-html-output"
+            />
+            <output id="skill-html-output" class="skills-index__value">40%</output>
+          </div>
+        </div>
+
+        <div class="skills-index__row">
+          <label class="skills-index__label" for="skill-css">Лизание попы</label>
+          <div class="skills-index__control">
+            <input
+              type="range"
+              id="skill-css"
+              class="skills-index__slider"
+              min="0"
+              max="100"
+              step="1"
+              value="45"
+              data-skill="css"
+              data-output-id="skill-css-output"
+            />
+            <output id="skill-css-output" class="skills-index__value">45%</output>
+          </div>
+        </div>
+
+        <div class="skills-index__row">
+          <label class="skills-index__label" for="skill-js">Скакание сверху на члене</label>
+          <div class="skills-index__control">
+            <input
+              type="range"
+              id="skill-js"
+              class="skills-index__slider"
+              min="0"
+              max="100"
+              step="1"
+              value="35"
+              data-skill="js"
+              data-output-id="skill-js-output"
+            />
+            <output id="skill-js-output" class="skills-index__value">35%</output>
+          </div>
+        </div>
+
+        <div class="skills-index__row">
+          <label class="skills-index__label" for="skill-react">Глубокая глотка</label>
+          <div class="skills-index__control">
+            <input
+              type="range"
+              id="skill-react"
+              class="skills-index__slider"
+              min="0"
+              max="100"
+              step="1"
+              value="25"
+              data-skill="react_vue"
+              data-output-id="skill-react-output"
+            />
+            <output id="skill-react-output" class="skills-index__value">25%</output>
+          </div>
+        </div>
+
+        <div class="skills-index__row">
+          <label class="skills-index__label" for="skill-llm">Анальный секс</label>
+          <div class="skills-index__control">
+            <input
+              type="range"
+              id="skill-llm"
+              class="skills-index__slider"
+              min="0"
+              max="100"
+              step="1"
+              value="30"
+              data-skill="llm_ai"
+              data-output-id="skill-llm-output"
+            />
+            <output id="skill-llm-output" class="skills-index__value">30%</output>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-index__summary">
+        <div class="skills-index__summary-header">
+          <span class="skills-index__summary-title">Средний уровень</span>
+          <span class="skills-index__summary-percent" id="skills-index-average-text">35%</span>
+        </div>
+
+        <div class="skills-index__gauge" aria-hidden="true">
+          <div class="skills-index__gauge-bar" id="skills-index-gauge-bar"></div>
+        </div>
+
+        <p class="skills-index__description" id="skills-index-description">
+          Прогрессируешь, держи темп
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
